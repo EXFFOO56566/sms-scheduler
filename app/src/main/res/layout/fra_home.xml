@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/white"
+                android:fillViewport="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/fra_home_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_header_bg"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="36sp"/>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/fra_home_tabs_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fra_home_header"
+            android:orientation="horizontal">
+
+
+            <com.andexert.library.RippleView
+                rv_centered="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/scheduled_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_tabs"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="@string/tab_scheduled"
+                    android:textColor="@drawable/selector_tabs_text_colors"
+                    android:textSize="22sp"/>
+            </com.andexert.library.RippleView>
+
+
+            <com.andexert.library.RippleView
+                rv_centered="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1">
+
+
+                <TextView
+                    android:id="@+id/sent_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_tabs"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="@string/tab_sent"
+                    android:textColor="@drawable/selector_tabs_text_colors"
+                    android:textSize="22sp"/>
+            </com.andexert.library.RippleView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fra_home_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fra_home_empty_container_scheduled"
+            android:layout_below="@id/fra_home_tabs_container"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fra_home_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scrollbars="vertical"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fra_home_empty_container_scheduled"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/fra_home_tabs_container"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_sent_empty"
+                android:textColor="@color/compose_common_text"
+                android:textSize="@dimen/home_empty_state"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fra_home_empty_container_sent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fra_home_tabs_container"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_ic_schedule"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/home_scheduled_empty"
+                android:textColor="@color/compose_common_text"
+                android:textSize="@dimen/home_empty_state"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="90dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_ic_arrow"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/home_admob"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/fra_home_undo_container"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/admob_id"/>
+
+    <RelativeLayout
+        android:id="@+id/fra_home_undo_container"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/home_undo_bg"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/fra_home_cancelled_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/snackbar_canceled"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/fra_home_undo_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:text="@string/snackbar_undo"
+            android:textColor="@color/compose_green_delimiter"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:paddingBottom="50dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        >
+
+
+        <com.andexert.library.RippleView
+            rv_centered="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fra_home_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_add_button"/>
+        </com.andexert.library.RippleView>
+    </LinearLayout>
+
+</RelativeLayout>

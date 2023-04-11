@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="list_item_contact_text">#404040</color>
+
+    <color name="list_item_contact_delimiter">#f2f2f2</color>
+
+    <color name="compose_contact_bg">#e7e7e7</color>
+    <color name="compose_contact_text">#616161</color>
+    <color name="compose_green_delimiter">#46aba0</color>
+
+    <color name="compose_common_text">#a4a4a4</color>
+
+    <color name="home_undo_bg">#464646</color>
+
+    <drawable name="white_bg">@android:color/white</drawable>
+
+    <drawable name="compose_green_delimiter_dr">#46aba0</drawable>
+    <drawable name="compose_common_text_dr">#a4a4a4</drawable>
+
+    <drawable name="light_gray">#c8c8c8</drawable>
+
+
+</resources>

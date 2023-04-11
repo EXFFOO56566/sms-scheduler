@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SMS Scheduler</string>
+
+    <string name="tab_scheduled">Scheduled</string>
+    <string name="tab_sent">Sent</string>
+
+    <string name="snackbar_canceled">Canceled</string>
+    <string name="snackbar_undo">UNDO</string>
+
+    <string name="compose_title">Message, Date, Time</string>
+    <string name="btn_schedule">SCHEDULE</string>
+    <string name="compose_choose_contact">Choose contact</string>
+    <string name="compose_search_contacts">Search contact</string>
+    <string name="compose_to_label">To</string>
+    <string name="compose_cancel_sign">X</string>
+    <string name="compose_type_message_hint">Type your message</string>
+    <string name="compose_type_date_hint">Date</string>
+    <string name="compose_type_time_hint">Time</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="back_header_contact">Compose Message</string>
+
+    <string name="error_scheduling">Please enter correct input data.</string>
+
+    <string name="notification_message">You successfully sent sms to your friend(s).</string>
+
+    <string name="home_scheduled_empty">Schedule SMS now.\nIt\'s so simple!</string>
+    <string name="home_sent_empty">Nothing has been sent yet...</string>
+
+    <string name="admob_id">ca-app-pub-3940256099942544/6300978111</string>
+</resources>

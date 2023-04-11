@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/grid_item_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:id="@+id/grid_item_compose_to"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/compose_to_label"
+        android:textColor="@color/compose_common_text"
+        android:textSize="16sp"/>
+
+    <RelativeLayout
+        android:id="@+id/grid_item_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_toLeftOf="@+id/grid_item_add"
+        android:layout_toRightOf="@id/grid_item_compose_to"
+        android:background="@drawable/compose_to"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/grid_item_compose_image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/grid_item_compose_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_toLeftOf="@+id/grid_item_compose_cancel"
+            android:layout_toRightOf="@id/grid_item_compose_image"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@color/compose_contact_text"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/grid_item_compose_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/compose_cancel_sign"
+            android:textColor="@color/compose_contact_text"
+            android:textSize="14sp"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/grid_item_add"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/home_add_button"/>
+</RelativeLayout>

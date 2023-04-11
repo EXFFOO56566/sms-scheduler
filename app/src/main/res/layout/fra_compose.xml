@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fra_home_header"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/home_header_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp"
+            android:text="@string/compose_title"
+            android:textColor="@android:color/white"
+            android:textSize="25sp"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_above="@+id/botttom_adview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fra_home_header"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.dmbteam.scheduler.widget.ExpandableHeightGridView
+                android:id="@+id/fra_compose_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:horizontalSpacing="5dp"
+                android:numColumns="2"
+                android:verticalSpacing="10dp"/>
+
+            <View
+                android:id="@+id/fra_compose_delimiter_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/fra_compose_gridview"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/selector_compose_border"/>
+
+            <LinearLayout
+                android:id="@+id/compose_text_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fra_compose_delimiter_gridview"
+                android:orientation="vertical">
+
+                <com.material.widget.FloatingEditText
+                    android:id="@+id/fra_contacts_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/compose_type_message_hint"
+                    android:padding="5dp"
+                    android:textColor="@color/compose_common_text"
+                    android:textColorHint="@color/compose_common_text"
+                    android:textSize="18sp"/>
+
+                <com.material.widget.FloatingEditText
+                    android:id="@+id/fra_contacts_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/compose_type_date_hint"
+                    android:padding="5dp"
+                    android:textColor="@color/compose_common_text"
+                    android:textColorHint="@color/compose_common_text"
+                    android:textSize="18sp"/>
+
+                <com.material.widget.FloatingEditText
+                    android:id="@+id/fra_contacts_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:editable="false"
+                    android:hint="@string/compose_type_time_hint"
+                    android:inputType="none"
+                    android:padding="5dp"
+                    android:textColor="@color/compose_common_text"
+                    android:textColorHint="@color/compose_common_text"
+                    android:textSize="18sp"/>
+
+
+                <com.andexert.library.RippleView
+                    rv_centered="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/fra_compose_schedule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/schedule_btn"
+                        android:gravity="center"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:paddingTop="15dp"
+                        android:text="@string/btn_schedule"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"/>
+                </com.andexert.library.RippleView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/botttom_adview_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/compose_admob"
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/admob_id"/>
+    </LinearLayout>
+</RelativeLayout>
